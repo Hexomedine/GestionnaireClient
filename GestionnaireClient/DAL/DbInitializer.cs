@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireClient.DAL
 {
-    public class DbInitializer : CreateDatabaseIfNotExists<CustomerContext>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<CustomerContext>
     {
         protected override void Seed(CustomerContext context)
         {

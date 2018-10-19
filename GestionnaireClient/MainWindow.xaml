@@ -13,26 +13,10 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" x:Name="CustomerDataGrid" ItemsSource="{Binding Customers}" AutoGenerateColumns="False" Margin="0,0,0,36" Grid.RowSpan="2" >
-            <DataGrid.Resources>
-                <!-- style to apply to DataGridTextColumn in edit mode  -->
-                <Style x:Key="CellEditStyle" TargetType="{x:Type TextBox}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Padding" Value="0"/>
-                    <Style.Triggers>
-                        <Trigger Property="Validation.HasError" Value="true">
-                            <Setter Property="ToolTip"
-
-                            Value="{Binding RelativeSource={RelativeSource Self},
-                                    Path=(Validation.Errors)[0].ErrorContent}"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-
-            </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nom" EditingElementStyle="{StaticResource CellEditStyle}" Binding="{Binding LastName,  ValidatesOnExceptions=True}" />
-                <DataGridTextColumn Header="Prenom" EditingElementStyle="{StaticResource CellEditStyle}"  Binding="{Binding FirstName, ValidatesOnExceptions=True}"/>
-                <DataGridHyperlinkColumn Header="Email" EditingElementStyle="{StaticResource CellEditStyle}" Binding="{Binding Email, ValidatesOnExceptions=True}" Width="1*"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Prenom"  Binding="{Binding FirstName}"/>
+                <DataGridHyperlinkColumn Header="Email" Binding="{Binding Email}" Width="1*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="1" x:Name="SaveButton" Click="SaveButton_Click">
