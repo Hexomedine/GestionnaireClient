@@ -16,7 +16,6 @@ namespace GestionnaireClient.Model
         public int Id { get; set; }
 
         private string firstName;
-
         public string FirstName
         {
             get { return firstName; }
