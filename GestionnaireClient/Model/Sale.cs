@@ -10,7 +10,8 @@ namespace GestionnaireClient.Model
 {
     public class Sale
     {
-        public Sale() {
+        public Sale()
+        {
             this.Products = new HashSet<Product>();
         }
 
@@ -18,7 +19,7 @@ namespace GestionnaireClient.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        private DateTime datePeriode;
+        private DateTime datePeriode = DateTime.Now;
         public DateTime DatePeriode
         {
             get { return datePeriode; }

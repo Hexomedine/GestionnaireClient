@@ -98,6 +98,12 @@
     <Compile Include="Views\CustomerMgr.xaml.cs">
       <DependentUpon>CustomerMgr.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProductMgr.xaml.cs">
+      <DependentUpon>ProductMgr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleMgr.xaml.cs">
+      <DependentUpon>SaleMgr.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +113,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CustomerMgr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductMgr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaleMgr.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

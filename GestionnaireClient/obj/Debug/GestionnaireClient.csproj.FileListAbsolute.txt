@@ -70,3 +70,7 @@ C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\De
 C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\GestionnaireClient.exe
 C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\GestionnaireClient.pdb
 C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\GestionnaireClient.csprojAssemblyReference.cache
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\Views\ProductMgr.g.cs
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\Views\SaleMgr.g.cs
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\Views\ProductMgr.baml
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\Views\SaleMgr.baml

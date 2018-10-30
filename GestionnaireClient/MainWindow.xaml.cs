@@ -48,8 +48,9 @@ namespace GestionnaireClient
             switch (MenuCombo.SelectedIndex)
             {
                 case 0 : DisplayedControl = new CustomerMgr(); break;
-                case 1 : break;
-                case 2 : break;
+                case 1 : DisplayedControl = new SaleMgr(); break;
+                case 2: DisplayedControl = new ProductMgr(); break;
+                default: break;
             }
         }
     }
