@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\llourenco\Documents\Formation\GestionnaireClient\GestionnaireClient\GestionnaireClient\obj\Debug\
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\obj\Debug\
 GestionnaireClient
 none
 false
 DEBUG;TRACE
-C:\Users\llourenco\Documents\Formation\GestionnaireClient\GestionnaireClient\GestionnaireClient\App.xaml
-11151548125
+C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\App.xaml
+2927735173
 
-15975886476
-20-1102725324
-MainWindow.xaml;
+13547222893
+21-2053625840
+MainWindow.xaml;Views\CustomerMgr.xaml;
 
-True
+False
 

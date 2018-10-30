@@ -5,14 +5,14 @@ namespace GestionnaireClient.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GestionnaireClient.DAL.CustomerContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GestionnaireClient.DAL.DBContextMgr>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(GestionnaireClient.DAL.CustomerContext context)
+        protected override void Seed(GestionnaireClient.DAL.DBContextMgr context)
         {
             //  This method will be called after migrating to the latest version.
 

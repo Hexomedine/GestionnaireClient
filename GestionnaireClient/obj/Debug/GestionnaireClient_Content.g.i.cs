@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gestionnaireclient.customercontext.mdf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gestionnaireclient.customercontext_log.ldf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gestionnairedbcontext.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gestionnairedbcontext_log.ldf")]
 
 

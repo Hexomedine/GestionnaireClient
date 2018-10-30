@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace GestionnaireClient.DAL
 {
-    public class DbInitializer : DropCreateDatabaseIfModelChanges<CustomerContext>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<DBContextMgr>
     {
-        protected override void Seed(CustomerContext context)
+        protected override void Seed(DBContextMgr context)
         {
             var customer = new List<Customer>
             {
-                new Customer() { Id=1, FirstName ="Regis", LastName="Robert", Email="regis.robert@gmel.co"},
-                new Customer() { Id=2, FirstName ="Ababou", LastName="Kaker", Email="akaker@gmel.co"},
-                new Customer() { Id=3, FirstName ="John", LastName="Fitz", Email="jf@gmel.co"}
+                new Customer() { Id=1, FirstName ="Regis", LastName="Robert", Email="regis.robert@gmail.com"}
 
             };
 
