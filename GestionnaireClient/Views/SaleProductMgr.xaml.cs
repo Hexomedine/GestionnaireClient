@@ -1,22 +1,29 @@
 ﻿using GestionnaireClient.DAL;
 using GestionnaireClient.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace GestionnaireClient.Views
 {
     /// <summary>
-    /// Logique d'interaction pour SaleMgr.xaml
+    /// Logique d'interaction pour SaleProductMgr.xaml
     /// </summary>
-    public partial class SaleMgr : UserControl
+    public partial class SaleProductMgr : UserControl
     {
         DBContextMgr _context = new DBContextMgr();
-
 
         #region PROPDP : DbCtxtMgr
         public DBContextMgr DbCtxtMgr
@@ -27,16 +34,31 @@ namespace GestionnaireClient.Views
 
         // Using a DependencyProperty as the backing store for DbCtxtMgr.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DbCtxtMgrProperty =
-            DependencyProperty.Register("DbCtxtMgr", typeof(DBContextMgr), typeof(SaleMgr));
+            DependencyProperty.Register("DbCtxtMgr", typeof(DBContextMgr), typeof(SaleProductMgr));
         #endregion
 
-        public SaleMgr()
+        #region PROPDP : SaleTitle
+        public string SaleTitle
+        {
+            get { return (string)GetValue(SaleTitleProperty); }
+            set { SetValue(SaleTitleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DbCtxtMgr.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SaleTitleProperty =
+            DependencyProperty.Register("SaleTitle", typeof(string), typeof(SaleProductMgr));
+        #endregion
+
+        public SaleProductMgr(Sale selectedSale)
         {
             InitializeComponent();
+            SaleTitle = "Vente du "+ selectedSale.DatePeriode.ToString();
             DataContext = this;
-            _context.Sales.Load();
+            _context.Products.Load();
             DbCtxtMgr = _context;
-            SaleDataGrid.ItemsSource = _context.Sales.Local;
+            AvailableProduct.ItemsSource = _context.Products.Local;
+            SelectedSaleProduct.ItemsSource = _context.Sales.Local;
+            
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -57,7 +79,7 @@ namespace GestionnaireClient.Views
             // against the Local property without using ToList first.
             foreach (var item in _context.Sales.Local.ToList())
             {
-                if (item.DatePeriode == null || item.DatePeriode.Year <2000)
+                if (item.DatePeriode == null || item.DatePeriode.Year < 2000)
                 {
                     _context.Sales.Remove(item);
                 }
@@ -66,7 +88,7 @@ namespace GestionnaireClient.Views
 
             _context.SaveChanges();
             // Refresh the grids so the database generated values show up.
-            this.SaleDataGrid.Items.Refresh();
+            this.AvailableProduct.Items.Refresh();
         }
 
         private void SaleDataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -77,58 +99,12 @@ namespace GestionnaireClient.Views
             // similar to ToList but without creating a list.
             // When used with Linq to Entities this method
             // creates entity objects and adds them to the context.
+            _context.Products.Load();
             _context.Sales.Load();
             // After the data is loaded call the DbSet<T>.Local property
             // to use the DbSet<T> as a binding source.
             //categoryViewSource.Source = _context.Categories.Local;
-            SaleDataGrid.ItemsSource = _context.Sales.Local;
-        }
-
-        private void OpenSaleButton_Click(object sender, RoutedEventArgs e)
-        {
-            SimpleWindow simpleWindow = new SimpleWindow();
-            Sale vente = (Sale)SaleDataGrid.SelectedItem;
-            simpleWindow.Content = new PopupWindow(vente);
-            simpleWindow.Show();
-            //Page pg = GetDependencyObjectFromVisualTree(this, typeof(Page)) as Page;
-            //Sale vente = (Sale)SaleDataGrid.SelectedItem;
-            //pg.NavigationService.Navigate(new PopupWindow(vente));
-        }
-
-        /// <summary>
-
-        /// Walk visual tree to find the first DependencyObject  of the specific type.
-
-        /// </summary>
-
-        private DependencyObject
-
-        GetDependencyObjectFromVisualTree(DependencyObject startObject, Type type)
-
-        {
-
-            //Walk the visual tree to get the parent(ItemsControl)
-
-            //of this control
-
-            DependencyObject parent = startObject;
-
-            while (parent != null)
-
-            {
-
-                if (type.IsInstanceOfType(parent))
-
-                    break;
-
-                else
-
-                    parent = VisualTreeHelper.GetParent(parent);
-
-            }
-
-            return parent;
-
+            AvailableProduct.ItemsSource = _context.Products.Local;
         }
     }
 }

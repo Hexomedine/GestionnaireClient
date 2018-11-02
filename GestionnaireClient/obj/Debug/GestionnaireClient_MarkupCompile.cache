@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\pprudhomme\source\repos\GestionnaireClientNew\GestionnaireClient\App.xaml
-4-1737271933
+81572297548
 
-151591070619
+19-750273198
 21-2053625840
-MainWindow.xaml;Views\CustomerMgr.xaml;Views\ProductMgr.xaml;Views\SaleMgr.xaml;
+MainPage.xaml;MainWindow.xaml;PopupWindow.xaml;SimpleWindow.xaml;Views\CustomerMgr.xaml;Views\ProductMgr.xaml;Views\SaleMgr.xaml;Views\SaleProductMgr.xaml;
 
 False
 
